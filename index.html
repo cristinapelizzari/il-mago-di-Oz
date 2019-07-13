@@ -1,0 +1,2174 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+       <title>The Wonderful Wizard of Oz</title>
+
+    <script src="./giochino/phaser.min.js"></script>
+       <!--<script src="./giochino/boot.js"></script>
+       <script src="./giochino/load.js"></script>
+       <script src="./giochino/menu.js"></script>
+       <script src="./giochino/play.js"></script>
+       <script src="./giochino/victory.js"></script>
+       <script src="./giochino/final.js"></script>
+       <script src="./giochino/game.js"></script>-->
+       <script src="./giochino/giochino.js"></script>
+
+      <!--<script src="./giocone/phaser.min.js"></script>
+       <script src="./giocone/boot-vs.js"></script>
+       <script src="./giocone/load-vs.js"></script>
+       <script src="./giocone/menu-vs.js"></script>
+       <script src="./giocone/play-vs.js"></script>
+       <script src="./giocone/victory-vs.js"></script>
+       <script src="./giocone/final-vs.js"></script>
+       <script src="./giocone/game-vs.js"></script>-->
+       <script src="./giocone/giocone.js"></script>
+
+       <script src= "./jquery/jquery-3.2.1.js"> </script>
+           <!--<script src='js/index.js'></script>-->
+
+
+</head>
+
+<style>
+
+#wrapper {
+  width: 1000px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+transform: translate(-50%, -50%);
+}
+
+#main {
+    width: 30%;
+    height: 700px;
+    left: 63%;
+    position: absolute;
+}
+
+#tastiBassi {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 81.5%;
+}
+
+#title {
+  text-align: center;
+}
+
+#content {
+  text-align: center;
+}
+
+.game {
+
+}
+
+.button {
+  position: absolute;
+
+  border-radius: 5px;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.scenette {
+
+  cursor: pointer;
+}
+
+
+
+#t000 {
+  position: absolute;
+  top: 39%;
+  left: 4%;
+}
+
+#t0002 {
+  display: none;
+  position: absolute;
+  top: 39%;
+  left: 4%;
+}
+
+#t010 {
+  position: absolute;
+  top: 39%;
+  left: 16%;
+}
+
+#t0102 {
+  display: none;
+  position: absolute;
+  top: 39%;
+  left: 16%;
+}
+
+#t020 {
+  position: absolute;
+  top: 25%;
+  left: 27%;
+}
+
+#t0202 {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 27%;
+}
+
+#t030 {
+  position: absolute;
+  top: 53%;
+  left: 26.8%;
+}
+
+#t0302 {
+  display: none;
+  position: absolute;
+  top: 53%;
+  left: 26.8%;
+}
+
+#t040 {
+  position: absolute;
+  top: 18%;
+  left: 38%;
+  height: 20px:
+}
+
+#t0402 {
+  display: none;
+  position: absolute;
+  top: 18%;
+  left: 38%;
+}
+
+#t050 {
+  position: absolute;
+  top: 39%;
+  left: 38%;
+}
+
+#t0502 {
+  display: none;
+  position: absolute;
+  top: 39%;
+  left: 38%;
+}
+#t060 {
+  position: absolute;
+  top: 66.8%;
+  left: 38%;
+}
+
+#t0602 {
+  display: none;
+  position: absolute;
+  top: 66.8%;
+  left: 38%;
+}
+
+#t070 {
+  position: absolute;
+  top: 17.5%;
+  left: 83%;
+}
+
+#t0702 {
+  display: none;
+  position: absolute;
+  top: 17.5%;
+  left: 83%;
+}
+
+#t080 {
+  position: absolute;
+  top: 46%;
+  left: 49%;
+}
+
+#t0802 {
+  display: none;
+  position: absolute;
+  top: 46%;
+  left: 49%;
+}
+
+#t090 {
+  position: absolute;
+  top: 33%;
+  left: 48.8%;
+}
+
+#t0902 {
+  display: none;
+  position: absolute;
+  top: 33%;
+  left: 48.8%;
+}
+
+#t100 {
+  position: absolute;
+  top: 60%;
+  left: 49%;
+}
+
+#t1002 {
+  display: none;
+  position: absolute;
+  top: 60%;
+  left: 49%;
+}
+
+#t110 {
+  position: absolute;
+  top: 73.7%;
+  left: 49%;
+}
+
+#t1102 {
+  display: none;
+  position: absolute;
+  top: 73.7%;
+  left: 49%;
+}
+
+#t120 {
+  position: absolute;
+  top: 25.5%;
+  left: 62.8%;
+}
+
+#t1202 {
+  display: none;
+  position: absolute;
+  top: 25.5%;
+  left: 62.8%;
+}
+
+#t130 {
+  position: absolute;
+  top: 66.8%;
+  left: 63%;
+}
+
+#t1302 {
+  display: none;
+  position: absolute;
+  top: 66.8%;
+  left: 63%;
+}
+
+#t140 {
+  position: absolute;
+  top: 48%;
+  left: 83%;
+}
+
+#t1402 {
+  display: none;
+  position: absolute;
+  top: 48%;
+  left: 83%;
+}
+
+#t150 {
+  position: absolute;
+  top: 79.5%;
+  left: 83%;
+}
+
+#t1502 {
+  display: none;
+  position: absolute;
+  top: 79.5%;
+  left: 83%;
+}
+
+#tgioco1 {
+  position: absolute;
+  top: 36.8%;
+  left: 23.8%;
+}
+
+#tgioco2 {
+  position: absolute;
+  top: 64.4%;
+  left: 71.3%;
+}
+
+#tastocopertina {
+  position: absolute;
+  top: 85%;
+  left: 4%;
+}
+
+#tastocopertina2 {
+  display: none;
+  position: absolute;
+  top: 85%;
+  left: 4%;
+}
+
+#tastocopertinascene {
+  position: absolute;
+  left: 47%;
+}
+
+#tastocopertina2scene {
+  display: none;
+  position: absolute;
+  left: 47%;
+}
+
+#tastomappa {
+  position: absolute;
+  left: 28%;
+}
+
+#tastomappa2 {
+  display: none;
+  position: absolute;
+  left:28%;
+}
+
+#tastomappacopertina {
+  position: absolute;
+  top: 75.5%;
+  left:6.5%;
+}
+
+#tastomappa2copertina {
+  display: none;
+  position: absolute;
+  top: 75.5%;
+  left:6.5%;
+}
+#tastocrediti {
+  position: absolute;
+  top: 75.5%;
+  left:18.5%;
+}
+#tastocrediti2 {
+  display: none;
+  position: absolute;
+  top: 75.5%;
+  left:18.5%;
+}
+
+#tastoautori {
+  position: absolute;
+  top: 75.5%;
+  left:12.5%;
+}
+
+#tastoautori2 {
+  display: none;
+  position: absolute;
+  top: 75.5%;
+  left:12.5%;
+}
+
+#titolostart {
+  position: absolute;
+  left: 28.5%;
+  top:69.5%;
+}
+
+#titolostart2 {
+  display: none;
+  position: absolute;
+  left: 28.5%;
+  top:69.5%;
+}
+
+
+#titolomappa {
+  position: absolute;
+  top: 6%;
+  left: 33%;
+}
+
+#tastomappacrediti {
+  position: absolute;
+  top: 85%;
+  left:49.5%;
+}
+
+#tastomappa2crediti {
+  display: none;
+  position: absolute;
+  top: 85%;
+  left:49.5%;
+}
+
+#tastomappagioco {
+  position: absolute;
+  top: 90%;
+  left:3%;
+}
+
+#tastomappa2gioco {
+  display: none;
+  position: absolute;
+  top: 90%;
+  left:3%;
+}
+
+#tastocopertinagioco {
+  position: absolute;
+  top: 90%;
+  left:9%;
+}
+
+#tastocopertina2gioco {
+  display: none;
+  position: absolute;
+  top: 90%;
+  left:9%;
+}
+
+#tastocopertinacrediti {
+  position: absolute;
+  top: 85%;
+  left:43.6%;
+}
+
+#tastocopertina2crediti {
+  display: none;
+  position: absolute;
+  top: 85%;
+  left:43.6%;
+}
+
+#left {
+  position: absolute;
+  top: 64.5%;
+}
+
+#left2 {
+  display: none;
+  position: absolute;
+  top: 64.5%;
+}
+
+
+#center {
+  position: absolute;
+    top: 58.5%;
+}
+
+#center2 {
+  display: none;
+  position: absolute;
+  top: 58.5%;
+}
+
+#right {
+  position: absolute;
+  top: 70.5%;
+}
+
+#right2 {
+  display: none;
+  position: absolute;
+  top: 70.5%;
+}
+
+
+#gioco1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#gioco2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#coffer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+}
+
+
+#immagine {
+  width: 1000px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+}
+
+#cornice {
+  width: 1000px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+}
+
+#testo {
+  position: absolute;
+  top: 3%;
+}
+
+
+
+</style>
+
+<body background="render/pattern_1.png">
+
+
+
+  <div id="wrapper">
+
+<div  id="immagine"></div>
+<div id="cornice"></div>
+
+
+<div id="gioco1" class="game" style="display:none">
+</div>
+<div id="gioco2" class="game" style="display:none">
+</div>
+
+    <h1 id="title" class="text"></h1>
+    <div id="content" class="text"></div>
+    <div id="buttons">
+      <div id="main">
+      <div id="left" class="button  text"></div>
+      <div id="left2" class="button  text"></div>
+        <div id="center" class="button  text"></div>
+        <div id="center2" class="button  text"></div>
+      <div id="right" class="button text"></div>
+      <div id="right2" class="button text"></div>
+      <div  id="testo"></div>
+      <div id="tastiBassi">
+        <div id="tastocopertinascene" class="scenette"></div>
+        <div id="tastocopertina2scene" class="scenette"></div>
+        <div id="tastomappa"></div>
+        <div id="tastomappa2" class="scenette"></div>
+      </div>
+    </div>
+    <div id="coffer"></div>
+      <div id="t000" class="scenette"></div>
+        <div id="t0002" class="scenette"></div>
+        <div id="t010" class="scenette"></div>
+        <div id="t0102" class="scenette"></div>
+        <div id="t020" class="scenette"></div>
+        <div id="t0202" class="scenette"></div>
+        <div id="t030" class="scenette"></div>
+        <div id="t0302" class="scenette"></div>
+        <div id="t040" class="scenette"></div>
+        <div id="t0402" class="scenette"></div>
+        <div id="t050" class="scenette"></div>
+        <div id="t0502" class="scenette"></div>
+        <div id="t060" class="scenette"></div>
+        <div id="t0602" class="scenette"></div>
+        <div id="t070" class="scenette"></div>
+        <div id="t0702" class="scenette"></div>
+        <div id="t080" class="scenette"></div>
+        <div id="t0802" class="scenette"></div>
+        <div id="t090" class="scenette"></div>
+        <div id="t0902" class="scenette"></div>
+        <div id="t100" class="scenette"></div>
+        <div id="t1002" class="scenette"></div>
+        <div id="t110" class="scenette"></div>
+        <div id="t1102" class="scenette"></div>
+        <div id="t120" class="scenette"></div>
+        <div id="t1202" class="scenette"></div>
+        <div id="t130" class="scenette"></div>
+        <div id="t1302" class="scenette"></div>
+        <div id="t140" class="scenette"></div>
+        <div id="t1402" class="scenette"></div>
+        <div id="t150" class="scenette"></div>
+        <div id="t1502" class="scenette"></div>
+        <div id="tgioco1" class="scenette"></div>
+        <div id="tgioco2" class="scenette"></div>
+        <div id="tastocopertina" class="scenette"></div>
+        <div id="tastocopertina2" class="scenette"></div>
+        <div id="titolomappa"></div>
+        <div id="tastocrediti" class="scenette"></div>
+        <div id="tastocrediti2" class="scenette"></div>
+        <div id="tastoautori" class="scenette"></div>
+        <div id="tastoautori2" class="scenette"></div>
+        <div id="titolostart" class="scenette"></div>
+        <div id="titolostart2" class="scenette"></div>
+        <div id="tastomappacopertina" class="scenette"></div>
+        <div id="tastomappa2copertina" class="scenette"></div>
+        <div id="tastomappacrediti" class="scenette"></div>
+        <div id="tastomappa2crediti" class="scenette"></div>
+        <div id="tastocopertinacrediti" class="scenette"></div>
+        <div id="tastocopertina2crediti" class="scenette"></div>
+
+        <!--<div id="tastomappagioco" class="scenette"></div>
+        <div id="tastomappa2gioco" class="scenette"></div>
+        <div id="tastocopertinagioco" class="scenette"></div>
+        <div id="tastocopertina2gioco" class="scenette"></div>-->
+    </div>
+  </div>
+
+<script>
+var Bordo= document.createElement("img");
+Bordo.setAttribute("src", "./render/bordo.png");
+
+
+var coffer1 = document.createElement("img");
+coffer1.setAttribute("src", "./pulsanti/biglietto1.png");
+
+var coffer2 = document.createElement("img");
+coffer2.setAttribute("src", "./pulsanti/biglietto2.png");
+
+var coffer3 = document.createElement("img");
+coffer3.setAttribute("src", "./pulsanti/biglietto3.png");
+
+var mappa = document.createElement("img");
+mappa.setAttribute("src", "./render/Mappa solo frecce.png");
+
+var titoloMappa = document.createElement("img");
+titoloMappa.setAttribute("src", "./pulsanti/Titolo mappa.png");
+
+var tastoCopertina = document.createElement("img");
+tastoCopertina.setAttribute("src", "./pulsanti/mongolfiera.png");
+
+var tastoCopertina2 = document.createElement("img");
+tastoCopertina2.setAttribute("src", "./pulsanti/mongolfiera2.png");
+
+var tastoCopertinaGioco = document.createElement("img");
+tastoCopertinaGioco.setAttribute("src", "./pulsanti/mongolfiera.png");
+
+var tastoCopertina2Gioco = document.createElement("img");
+tastoCopertina2Gioco.setAttribute("src", "./pulsanti/mongolfiera2.png");
+
+var tastoCopertinaScene = document.createElement("img");
+tastoCopertinaScene.setAttribute("src", "./pulsanti/mongolfiera-scene.png");
+
+var tastoCopertina2Scene = document.createElement("img");
+tastoCopertina2Scene.setAttribute("src", "./pulsanti/mongolfiera2-scene.png");
+
+var tastoMappa = document.createElement("img");
+tastoMappa.setAttribute("src", "./pulsanti/mappa.png");
+
+var tastoMappa2 = document.createElement("img");
+tastoMappa2.setAttribute("src", "./pulsanti/mappa2.png");
+
+var tastoMappaGioco = document.createElement("img");
+tastoMappaGioco.setAttribute("src", "./pulsanti/mappa.png");
+
+var tastoMappa2Gioco = document.createElement("img");
+tastoMappa2Gioco.setAttribute("src", "./pulsanti/mappa2.png");
+
+var tastoCrediti = document.createElement("img");
+tastoCrediti.setAttribute("src", "./pulsanti/credits.png");
+
+var tastoCrediti2 = document.createElement("img");
+tastoCrediti2.setAttribute("src", "./pulsanti/credits2.png");
+
+var tastoAutori = document.createElement("img");
+tastoAutori.setAttribute("src", "./pulsanti/autori.png");
+
+var tastoAutori2 = document.createElement("img");
+tastoAutori2.setAttribute("src", "./pulsanti/autori2.png");
+
+var Copertina = document.createElement("img");
+Copertina.setAttribute("src", "./render/copertina.png");
+
+var Crediti = document.createElement("img");
+Crediti.setAttribute("src", "./render/crediti.png");
+
+var Autori = document.createElement("img");
+Autori.setAttribute("src", "./render/autori.png");
+
+var tastoMappaCopertina = document.createElement("img");
+tastoMappaCopertina.setAttribute("src", "./pulsanti/mappa-copertina.png");
+
+var tastoMappa2Copertina = document.createElement("img");
+tastoMappa2Copertina.setAttribute("src", "./pulsanti/mappa2-copertina.png");
+
+var titoloStart = document.createElement("img");
+titoloStart.setAttribute("src", "./pulsanti/titolostart.png");
+
+var titoloStart2 = document.createElement("img");
+titoloStart2.setAttribute("src", "./pulsanti/titolostart2.png");
+
+var tastoMappaCrediti = document.createElement("img");
+tastoMappaCrediti.setAttribute("src", "./pulsanti/mappa.png");
+
+var tastoMappa2Crediti = document.createElement("img");
+tastoMappa2Crediti.setAttribute("src", "./pulsanti/mappa2.png");
+
+var tastoCopertinaCrediti = document.createElement("img");
+tastoCopertinaCrediti.setAttribute("src", "./pulsanti/mongolfiera.png");
+
+var tastoCopertina2Crediti = document.createElement("img");
+tastoCopertina2Crediti.setAttribute("src", "./pulsanti/mongolfiera2.png");
+
+
+var r000 = document.createElement("img");
+r000.setAttribute("src", "./render/scena000.png");
+
+var r010 = document.createElement("img");
+r010.setAttribute("src", "./render/scena010.png");
+
+var r011 = document.createElement("img");
+r011.setAttribute("src", "./render/scena011.png");
+
+var r020 = document.createElement("img");
+r020.setAttribute("src", "./render/scena020.png");
+
+var r030 = document.createElement("img");
+r030.setAttribute("src", "./render/scena030.png");
+
+var r040 = document.createElement("img");
+r040.setAttribute("src", "./render/scena040.png");
+
+var r050 = document.createElement("img");
+r050.setAttribute("src", "./render/scena050.png");
+
+var r060 = document.createElement("img");
+r060.setAttribute("src", "./render/scena060.png");
+
+var r070 = document.createElement("img");
+r070.setAttribute("src", "./render/scena070.png");
+
+var r080 = document.createElement("img");
+r080.setAttribute("src", "./render/scena080.png");
+
+var r090 = document.createElement("img");
+r090.setAttribute("src", "./render/scena090.png");
+
+var r100 = document.createElement("img");
+r100.setAttribute("src", "./render/scena100.png");
+
+var r110 = document.createElement("img");
+r110.setAttribute("src", "./render/scena110.png");
+
+var r120 = document.createElement("img");
+r120.setAttribute("src", "./render/scena120.png");
+
+var r130 = document.createElement("img");
+r130.setAttribute("src", "./render/scena130.png");
+
+var r140 = document.createElement("img");
+r140.setAttribute("src", "./render/scena140.png");
+
+var r150 = document.createElement("img");
+r150.setAttribute("src", "./render/scena150.png");
+
+var r000testo = document.createElement("img");
+r000testo.setAttribute("src", "./render/000testo.png");
+
+var r010testo = document.createElement("img");
+r010testo.setAttribute("src", "./render/010testo.png");
+
+var r011testo = document.createElement("img");
+r011testo.setAttribute("src", "./render/011testo.png");
+
+var r020testo = document.createElement("img");
+r020testo.setAttribute("src", "./render/020testo.png");
+
+var r030testo = document.createElement("img");
+r030testo.setAttribute("src", "./render/030testo.png");
+
+var r040testo = document.createElement("img");
+r040testo.setAttribute("src", "./render/040testo.png");
+
+var r050testo = document.createElement("img");
+r050testo.setAttribute("src", "./render/050testo.png");
+
+var r060testo = document.createElement("img");
+r060testo.setAttribute("src", "./render/060testo.png");
+
+var r070testo = document.createElement("img");
+r070testo.setAttribute("src", "./render/070testo.png");
+
+var r080testo = document.createElement("img");
+r080testo.setAttribute("src", "./render/080testo.png");
+
+var r090testo = document.createElement("img");
+r090testo.setAttribute("src", "./render/090testo.png");
+
+var r100testo = document.createElement("img");
+r100testo.setAttribute("src", "./render/100testo.png");
+
+var r110testo = document.createElement("img");
+r110testo.setAttribute("src", "./render/110testo.png");
+
+var r120testo = document.createElement("img");
+r120testo.setAttribute("src", "./render/120testo.png");
+
+var r130testo = document.createElement("img");
+r130testo.setAttribute("src", "./render/130testo.png");
+
+var r140testo = document.createElement("img");
+r140testo.setAttribute("src", "./render/140testo.png");
+
+var r150testo = document.createElement("img");
+r150testo.setAttribute("src", "./render/150testo.png");
+
+var r000left = document.createElement("img");
+r000left.setAttribute("src", "./pulsanti/centro000.png");
+
+var r000left2 = document.createElement("img");
+r000left2.setAttribute("src", "./pulsanti/000centro2.png");
+
+var r010left = document.createElement("img");
+r010left.setAttribute("src", "./pulsanti/010sinistra.png");
+
+var r010left2 = document.createElement("img");
+r010left2.setAttribute("src", "./pulsanti/010sinistra2.png");
+
+var r011left = document.createElement("img");
+r011left.setAttribute("src", "./pulsanti/011sinistra.png");
+
+var r011left2 = document.createElement("img");
+r011left2.setAttribute("src", "./pulsanti/011sinistra2.png");
+
+var r011right = document.createElement("img");
+r011right.setAttribute("src", "./pulsanti/011destra.png");
+
+var r011right2 = document.createElement("img");
+r011right2.setAttribute("src", "./pulsanti/011destra2.png");
+
+var r020left = document.createElement("img");
+r020left.setAttribute("src", "./pulsanti/020sinistra.png");
+
+var r020left2 = document.createElement("img");
+r020left2.setAttribute("src", "./pulsanti/020sinistra2.png");
+
+var r020right = document.createElement("img");
+r020right.setAttribute("src", "./pulsanti/020destra.png");
+
+var r020right2 = document.createElement("img");
+r020right2.setAttribute("src", "./pulsanti/020destra2.png");
+
+var r030left = document.createElement("img");
+r030left.setAttribute("src", "./pulsanti/030sinistra.png");
+
+var r030left2 = document.createElement("img");
+r030left2.setAttribute("src", "./pulsanti/030sinistra2.png");
+
+var r030right = document.createElement("img");
+r030right.setAttribute("src", "./pulsanti/030destra.png");
+
+var r030right2 = document.createElement("img");
+r030right2.setAttribute("src", "./pulsanti/030destra2.png");
+
+var r040left = document.createElement("img");
+r040left.setAttribute("src", "./pulsanti/040sinistra.png");
+
+var r040left2 = document.createElement("img");
+r040left2.setAttribute("src", "./pulsanti/040sinistra2.png");
+
+var r040right = document.createElement("img");
+r040right.setAttribute("src", "./pulsanti/040destra.png");
+
+var r040right2 = document.createElement("img");
+r040right2.setAttribute("src", "./pulsanti/040destra2.png");
+
+var r050left = document.createElement("img");
+r050left.setAttribute("src", "./pulsanti/050sinistra.png");
+
+var r050left2 = document.createElement("img");
+r050left2.setAttribute("src", "./pulsanti/050sinistra2.png");
+
+var r050right = document.createElement("img");
+r050right.setAttribute("src", "./pulsanti/050destra.png");
+
+var r050right2 = document.createElement("img");
+r050right2.setAttribute("src", "./pulsanti/050destra2.png");
+
+var r060left = document.createElement("img");
+r060left.setAttribute("src", "./pulsanti/060sinistra.png");
+
+var r060left2 = document.createElement("img");
+r060left2.setAttribute("src", "./pulsanti/060sinistra2.png");
+
+var r060right = document.createElement("img");
+r060right.setAttribute("src", "./pulsanti/060destra.png");
+
+var r060right2 = document.createElement("img");
+r060right2.setAttribute("src", "./pulsanti/060destra2.png");
+
+var r070left = document.createElement("img");
+r070left.setAttribute("src", "./pulsanti/070sinistra.png");
+
+var r070left2 = document.createElement("img");
+r070left2.setAttribute("src", "./pulsanti/070sinistra2.png");
+
+var r080left = document.createElement("img");
+r080left.setAttribute("src", "./pulsanti/080sinistra.png");
+
+var r080left2 = document.createElement("img");
+r080left2.setAttribute("src", "./pulsanti/080sinistra2.png");
+
+var r080right = document.createElement("img");
+r080right.setAttribute("src", "./pulsanti/080destra.png");
+
+var r080right2 = document.createElement("img");
+r080right2.setAttribute("src", "./pulsanti/080destra2.png");
+
+var r090left = document.createElement("img");
+r090left.setAttribute("src", "./pulsanti/090sinistra.png");
+
+var r090left2 = document.createElement("img");
+r090left2.setAttribute("src", "./pulsanti/090sinistra2.png");
+
+var r090right = document.createElement("img");
+r090right.setAttribute("src", "./pulsanti/090destra.png");
+
+var r090right2 = document.createElement("img");
+r090right2.setAttribute("src", "./pulsanti/090destra2.png");
+
+var r100left = document.createElement("img");
+r100left.setAttribute("src", "./pulsanti/100sinistra.png");
+
+var r100left2 = document.createElement("img");
+r100left2.setAttribute("src", "./pulsanti/100sinistra2.png");
+
+var r100center = document.createElement("img");
+r100center.setAttribute("src", "./pulsanti/100centro.png");
+
+var r100center2 = document.createElement("img");
+r100center2.setAttribute("src", "./pulsanti/100centro2.png");
+
+var r100right = document.createElement("img");
+r100right.setAttribute("src", "./pulsanti/100destra.png");
+
+var r100right2 = document.createElement("img");
+r100right2.setAttribute("src", "./pulsanti/100destra2.png");
+
+var r101right = document.createElement("img");
+r101right.setAttribute("src", "./pulsanti/101destra.png");
+
+var r101right2 = document.createElement("img");
+r101right2.setAttribute("src", "./pulsanti/101destra2.png");
+
+var r102right = document.createElement("img");
+r102right.setAttribute("src", "./pulsanti/102destra.png");
+
+var r102right2 = document.createElement("img");
+r102right2.setAttribute("src", "./pulsanti/102destra2.png");
+
+var r103right = document.createElement("img");
+r103right.setAttribute("src", "./pulsanti/103destra.png");
+
+var r103right2 = document.createElement("img");
+r103right2.setAttribute("src", "./pulsanti/103destra2.png");
+
+
+
+
+var r110right = document.createElement("img");
+r110right.setAttribute("src", "./pulsanti/110destra.png");
+
+var r110right2 = document.createElement("img");
+r110right2.setAttribute("src", "./pulsanti/110destra2.png");
+
+var r110left = document.createElement("img");
+r110left.setAttribute("src", "./pulsanti/110sinistra.png");
+
+var r110left2 = document.createElement("img");
+r110left2.setAttribute("src", "./pulsanti/110sinistra2.png");
+
+var r120left = document.createElement("img");
+r120left.setAttribute("src", "./pulsanti/120sinistra.png");
+
+var r120left2 = document.createElement("img");
+r120left2.setAttribute("src", "./pulsanti/120sinistra2.png");
+
+var r120right = document.createElement("img");
+r120right.setAttribute("src", "./pulsanti/120destra.png");
+
+var r120right2 = document.createElement("img");
+r120right2.setAttribute("src", "./pulsanti/120destra2.png");
+
+var r130left = document.createElement("img");
+r130left.setAttribute("src", "./pulsanti/130sinistra.png");
+
+var r130left2 = document.createElement("img");
+r130left2.setAttribute("src", "./pulsanti/130sinistra2.png");
+
+var r130right = document.createElement("img");
+r130right.setAttribute("src", "./pulsanti/130destra.png");
+
+var r130right2 = document.createElement("img");
+r130right2.setAttribute("src", "./pulsanti/130destra2.png");
+
+var r140left = document.createElement("img");
+r140left.setAttribute("src", "./pulsanti/140sinistra.png");
+
+var r140left2 = document.createElement("img");
+r140left2.setAttribute("src", "./pulsanti/140sinistra2.png");
+
+var r150left = document.createElement("img");
+r150left.setAttribute("src", "./pulsanti/150sinistra.png");
+
+var r150left2 = document.createElement("img");
+r150left2.setAttribute("src", "./pulsanti/150sinistra2.png");
+
+var mappa000 = document.createElement("img");
+mappa000.setAttribute("src", "./pulsanti/000mappa.png");
+
+var mappa0002 = document.createElement("img");
+mappa0002.setAttribute("src", "./pulsanti/000mappa2.png");
+
+var mappa010 = document.createElement("img");
+mappa010.setAttribute("src", "./pulsanti/010mappa.png");
+
+var mappa0102 = document.createElement("img");
+mappa0102.setAttribute("src", "./pulsanti/010mappa2.png");
+
+var mappa020 = document.createElement("img");
+mappa020.setAttribute("src", "./pulsanti/020mappa.png");
+
+var mappa0202 = document.createElement("img");
+mappa0202.setAttribute("src", "./pulsanti/020mappa2.png");
+
+var mappa030 = document.createElement("img");
+mappa030.setAttribute("src", "./pulsanti/030mappa.png");
+
+var mappa0302 = document.createElement("img");
+mappa0302.setAttribute("src", "./pulsanti/030mappa2.png");
+
+var mappa040 = document.createElement("img");
+mappa040.setAttribute("src", "./pulsanti/040mappa.png");
+
+var mappa0402 = document.createElement("img");
+mappa0402.setAttribute("src", "./pulsanti/040mappa2.png");
+
+var mappa050 = document.createElement("img");
+mappa050.setAttribute("src", "./pulsanti/050mappa.png");
+
+var mappa0502 = document.createElement("img");
+mappa0502.setAttribute("src", "./pulsanti/050mappa2.png");
+
+var mappa060 = document.createElement("img");
+mappa060.setAttribute("src", "./pulsanti/060mappa.png");
+
+var mappa0602 = document.createElement("img");
+mappa0602.setAttribute("src", "./pulsanti/060mappa2.png");
+
+var mappa070 = document.createElement("img");
+mappa070.setAttribute("src", "./pulsanti/070mappa.png");
+
+var mappa0702 = document.createElement("img");
+mappa0702.setAttribute("src", "./pulsanti/070mappa2.png");
+
+var mappa080 = document.createElement("img");
+mappa080.setAttribute("src", "./pulsanti/080mappa.png");
+
+var mappa0802 = document.createElement("img");
+mappa0802.setAttribute("src", "./pulsanti/080mappa2.png");
+
+var mappa090 = document.createElement("img");
+mappa090.setAttribute("src", "./pulsanti/090mappa.png");
+
+var mappa0902 = document.createElement("img");
+mappa0902.setAttribute("src", "./pulsanti/090mappa2.png");
+
+var mappa100 = document.createElement("img");
+mappa100.setAttribute("src", "./pulsanti/100mappa.png");
+
+var mappa1002 = document.createElement("img");
+mappa1002.setAttribute("src", "./pulsanti/100mappa2.png");
+
+var mappa110 = document.createElement("img");
+mappa110.setAttribute("src", "./pulsanti/110mappa.png");
+
+var mappa1102 = document.createElement("img");
+mappa1102.setAttribute("src", "./pulsanti/110mappa2.png");
+
+var mappa120 = document.createElement("img");
+mappa120.setAttribute("src", "./pulsanti/120mappa.png");
+
+var mappa1202 = document.createElement("img");
+mappa1202.setAttribute("src", "./pulsanti/120mappa2.png");
+
+var mappa130 = document.createElement("img");
+mappa130.setAttribute("src", "./pulsanti/130mappa.png");
+
+var mappa1302 = document.createElement("img");
+mappa1302.setAttribute("src", "./pulsanti/130mappa2.png");
+
+var mappa140 = document.createElement("img");
+mappa140.setAttribute("src", "./pulsanti/140mappa.png");
+
+var mappa1402 = document.createElement("img");
+mappa1402.setAttribute("src", "./pulsanti/140mappa2.png");
+
+var mappa150 = document.createElement("img");
+mappa150.setAttribute("src", "./pulsanti/150mappa.png");
+
+var mappa1502 = document.createElement("img");
+mappa1502.setAttribute("src", "./pulsanti/150mappa2.png");
+
+var mappaGioco1 = document.createElement("img");
+mappaGioco1.setAttribute("src", "./pulsanti/tgioco1.png");
+
+var mappaGioco2 = document.createElement("img");
+mappaGioco2.setAttribute("src", "./pulsanti/tgioco2.png");
+
+
+pagine = {
+
+  mappa: {
+      title: "Mappa",
+      content: "",
+      render: mappa,
+      t000: mappa000,
+      t0002: mappa0002,
+      goScene000: "s000",
+      t010: mappa010,
+      t0102: mappa0102,
+      goScene010: "s010",
+      t020: mappa020,
+      t0202: mappa0202,
+      goScene020: "i020",
+      t030: mappa030,
+      t0302: mappa0302,
+      goScene030: "i030",
+      t040: mappa040,
+      t0402: mappa0402,
+      goScene040: "i040",
+      t050: mappa050,
+      t0502: mappa0502,
+      goScene050: "i050",
+      t060: mappa060,
+      t0602: mappa0602,
+      goScene060: "i060",
+      t070: mappa070,
+      t0702: mappa0702,
+      goScene070: "fa070",
+      t080: mappa080,
+      t0802: mappa0802,
+      goScene080: "i080",
+      t090: mappa090,
+      t0902: mappa0902,
+      goScene090: "i090",
+      t100: mappa100,
+      t1002: mappa1002,
+      goScene100: "i100",
+      t110: mappa110,
+      t1102: mappa1102,
+      goScene110: "i110",
+      t120: mappa120,
+      t1202: mappa1202,
+      goScene120: "i120",
+      t130: mappa130,
+      t1302: mappa1302,
+      goScene130: "i130",
+      t140: mappa140,
+      t1402: mappa1402,
+      goScene140: "fa140",
+      t150: mappa150,
+      t1502: mappa1502,
+      goScene150: "fu150",
+      tgioco1: mappaGioco1,
+      goScene015: "s015",
+      tgioco2: mappaGioco2,
+      goScene135: "i135",
+      titolomappa: titoloMappa,
+      //goScene015: "s015",
+      tastocopertina: tastoCopertina,
+      tastocopertina2: tastoCopertina2,
+      goCopertina: "scena_copertina",
+      cornice: Bordo,
+    },
+
+    scena_copertina: {
+     title: "",
+     content: "",
+     tastocrediti: tastoCrediti,
+     tastocrediti2: tastoCrediti2,
+     goCrediti: "scena_crediti",
+     tastoautori: tastoAutori,
+     tastoautori2: tastoAutori2,
+     goAutori: "scena_autori",
+     tastomappa2copertina: tastoMappa2Copertina,
+     tastomappacopertina: tastoMappaCopertina,
+     goMap: "mappa",
+     render: Copertina,
+     titolostart: titoloStart,
+     titolostart2: titoloStart2,
+     cornice: Bordo,
+     goScene000: "s000",
+   },
+
+
+   scena_crediti: {
+    title: "",
+    content: "",
+    tastomappacrediti: tastoMappaCrediti,
+    tastomappa2crediti: tastoMappa2Crediti,
+    goMap: "mappa",
+    tastocopertinacrediti: tastoCopertinaCrediti,
+    tastocopertina2crediti: tastoCopertina2Crediti,
+    goCopertina: "scena_copertina",
+    cornice: Bordo,
+    render: Crediti,
+  },
+
+  scena_autori: {
+   title: "",
+   content: "",
+   tastomappacrediti: tastoMappaCrediti,
+   tastomappa2crediti: tastoMappa2Crediti,
+   goMap: "mappa",
+   tastocopertinacrediti: tastoCopertinaCrediti,
+   tastocopertina2crediti: tastoCopertina2Crediti,
+   goCopertina: "scena_copertina",
+   goMap: "mappa",
+   cornice: Bordo,
+   render: Autori,
+ },
+
+
+  s000: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r000left,
+    left2: r000left2,
+    goLeft: "s010",
+    /*layer2: r000center,
+    left2: "100px",
+    top2: "281px",*/
+    cornice: Bordo,
+    render: r000,
+    testo: r000testo,
+  },
+
+  s010: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r010left,
+    left2: r010left2,
+    goLeft: "s015",
+    cornice: Bordo,
+    render: r010,
+    testo: r010testo,
+  },
+
+  s015: {
+    title: "",
+    content: "",
+    leftText: "",
+    goLeft: "s011",
+    tastomappagioco: tastoMappaGioco,
+    tastomappa2gioco: tastoMappa2Gioco,
+    goMap: "mappa",
+    tastocopertinagioco: tastoCopertinaGioco,
+    tastocopertina2gioco: tastoCopertina2Gioco,
+    goCopertina: "scena_copertina",
+    game: "#gioco1",
+  },
+
+  s011: {
+    tit1e: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r011left,
+    left2: r011left2,
+    goLeft: "i030",
+    right: r011right,
+    right2: r011right2,
+    goRight: "i020",
+    cornice: Bordo,
+    render: r011,
+    testo: r011testo,
+  },
+
+
+  i020: {
+    title: "",
+    content: "" ,
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r020left,
+    left2: r020left2,
+    goLeft: "i040",
+    right: r020right,
+    right2: r020right2,
+    goRight: "i050",
+    cornice: Bordo,
+    render: r020,
+    testo: r020testo,
+  },
+
+  i030: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r030left,
+    left2: r030left2,
+    goLeft: "i050",
+    right: r030right,
+    right2: r030right2,
+    goRight: "i060",
+    cornice: Bordo,
+    render: r030,
+    testo: r030testo,
+  },
+
+  i040: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r040left,
+    left2: r040left2,
+    goLeft: "i090",
+    right: r040right,
+    right2: r040right2,
+    goRight: "fa070",
+    cornice: Bordo,
+    render: r040,
+    testo: r040testo,
+  },
+
+  i050: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r050left,
+    left2: r050left2,
+    goLeft: "i090",
+    right: r050right,
+    right2: r050right2,
+    goRight: "i080",
+    cornice: Bordo,
+    render: r050,
+    testo: r050testo,
+  },
+
+  i060: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r060left,
+    left2: r060left2,
+    goLeft: "i110",
+    right: r060right,
+    right2: r060right2,
+    goRight: "i100",
+    cornice: Bordo,
+    render: r060,
+    testo: r060testo,
+  },
+
+  fa070: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r070left,
+    left2: r070left2,
+    goLeft: "s000",
+    cornice: Bordo,
+    render: r070,
+    testo: r070testo,
+  },
+
+  i080: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r080left,
+    left2: r080left2,
+    goLeft: "i060",
+    right: r080right,
+    right2: r080right2,
+    goRight: "i120",
+    cornice: Bordo,
+    render: r080,
+    testo: r080testo,
+  },
+
+  i090: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r090left,
+    left2: r090left2,
+    goLeft: "i080",
+    right: r090right,
+    right2: r090right2,
+    goRight: "i120",
+    cornice: Bordo,
+    render: r090,
+    testo: r090testo,
+  },
+
+  i100: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r100left,
+    left2: r100left2,
+    goLeft: "i101",
+    center: r100center,
+    center2: r100center2,
+    goCenter: "i102",
+    right: r100right,
+    right2: r100right2,
+    goRight: "i103",
+    cornice: Bordo,
+    render: r100,
+    testo: r100testo,
+  },
+
+  i101: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    right: r101right,
+    right2: r101right2,
+    goRight: "fu150",
+    cornice: Bordo,
+    render: r100,
+    testo: r100testo,
+    coffer: coffer1,
+  },
+
+  i102: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    right: r102right,
+    right2: r102right2,
+    goRight: "i130",
+    cornice: Bordo,
+    render: r100,
+    testo: r100testo,
+    coffer: coffer2,
+  },
+
+  i103: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    right: r103right,
+    right2: r103right2,
+    goRight: "i120",
+    cornice: Bordo,
+    render: r100,
+    testo: r100testo,
+    coffer: coffer3,
+  },
+
+  i110: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r110left,
+    left2: r110left2,
+    goLeft: "fu150",
+    right: r110right,
+    right2: r110right2,
+    goRight: "fa140",
+    cornice: Bordo,
+    render: r110,
+    testo: r110testo,
+  },
+
+  i120: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r120left,
+    left2: r120left2,
+    goLeft: "i130",
+    right: r120right,
+    right2: r120right2,
+    goRight: "fa140",
+    cornice: Bordo,
+    render: r120,
+    testo: r120testo,
+  },
+
+  i130: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r130left,
+    left2: r130left2,
+    goLeft: "i135",
+    right: r130right,
+    right2: r130right2,
+    goRight: "fa070",
+    cornice: Bordo,
+    render: r130,
+    testo: r130testo,
+  },
+
+  i135: {
+    title: "",
+    content: "",
+    leftText: "",
+    goLeft: "i110",
+    tastomappagioco: tastoMappaGioco,
+    tastomappa2gioco: tastoMappa2Gioco,
+    goMap: "mappa",
+    tastocopertinagioco: tastoCopertinaGioco,
+    tastocopertina2gioco: tastoCopertina2Gioco,
+    goCopertina: "scena_copertina",
+    game: "#gioco2",
+  },
+
+  fa140: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r140left,
+    left2: r140left2,
+    goLeft: "s000",
+    cornice: Bordo,
+    render: r140,
+    testo: r140testo,
+  },
+
+  fu150: {
+    title: "",
+    content: "",
+    tastomappa: tastoMappa,
+    tastomappa2: tastoMappa2,
+    goMap: "mappa",
+    tastocopertinascene: tastoCopertinaScene,
+    tastocopertina2scene: tastoCopertina2Scene,
+    goCopertina: "scena_copertina",
+    left: r150left,
+    left2: r150left2,
+    goLeft: "s000",
+    cornice: Bordo,
+    render: r150,
+    testo: r150testo,
+  },
+
+  /*paginaFelice: {
+    title: "Mare",
+    content: "Ci sono i pesci",
+    leftText: "Nuota",
+    goLeft: "paginaFelice",
+    rightText: "Combattili",
+    goRight: "paginaMorte"
+  },
+  paginaTriste: {
+    title: "Ade",
+    content: "Buona villeggiatura",
+    leftText: "Rimani",
+    goLeft: "paginaTriste",
+    rightText: "Ricomincia",
+    goRight: "paginaInizio"
+  },
+  paginaInizio: {
+    title: "Castello",
+    content: "Sei in un castello ...",
+    leftText: "Stacci",
+    goLeft: "paginaInizio",
+    rightText: "Esci",
+    goRight: "paginaMorte"
+  },
+  paginaMorte: {
+    title: "Game over: sei morto",
+    content: "Vuoi resuscitare?",
+    leftText: "Si, dopo 3 giorni",
+    goLeft: "paginaFelice",
+    rightText: "No",
+    goRight: "paginaTriste"
+  },
+  paginaVittoria: {
+    title: "Titolo!!! :(",
+    content: "Contenuto!!! :(",
+    leftText: "Sinistra!!! :(",
+    rightText: "Destra!!! :("
+  }*/
+}
+
+stato = "scena_copertina";
+render();
+
+
+
+function render() {
+  $(".game").css({display:"none"})
+  paginaCorrente = pagine[stato];
+  $("#title").text(paginaCorrente.title);
+  $("#content").text(paginaCorrente.content);
+  $("#left").text(paginaCorrente.leftText);
+  $("#center").text(paginaCorrente.centerText);
+  $("#right").text(paginaCorrente.rightText);
+  if(paginaCorrente.game) {
+  /*  $("#immagine").css("display", "none")
+   $("#left").css("display", "none")
+    $("#center").css("display", "none")
+    $("#right").css("display", "none")*/
+$(paginaCorrente.game).css("display", "block");
+  /*  $(paginaCorrente.game).fadeIn();*/
+
+/*if(isVictorius==true) {
+  $("#left").fadeIn;
+  $("#center").fadeIn;
+  $("#right").fadeIn;
+}*/
+
+}
+
+
+  $("#immagine").children().remove();
+     $("#center").children().remove();
+      $("#center2").children().remove();
+     $("#left").children().remove();
+     $("#left2").children().remove();
+     $("#right").children().remove();
+     $("#right2").children().remove();
+     $("#testo").children().remove();
+     $("#t000").children().remove();
+     $("#t0002").children().remove();
+     $("#t010").children().remove();
+     $("#t0102").children().remove();
+     $("#t020").children().remove();
+     $("#t0202").children().remove();
+     $("#t030").children().remove();
+     $("#t0302").children().remove();
+     $("#t040").children().remove();
+     $("#t0402").children().remove();
+     $("#t050").children().remove();
+     $("#t0502").children().remove();
+     $("#t060").children().remove();
+     $("#t0602").children().remove();
+     $("#t070").children().remove();
+     $("#t0702").children().remove();
+     $("#t080").children().remove();
+     $("#t0802").children().remove();
+     $("#t090").children().remove();
+     $("#t0902").children().remove();
+     $("#t100").children().remove();
+     $("#t1002").children().remove();
+     $("#t110").children().remove();
+     $("#t1102").children().remove();
+     $("#t120").children().remove();
+     $("#t1202").children().remove();
+     $("#t130").children().remove();
+     $("#t1302").children().remove();
+     $("#t140").children().remove();
+     $("#t1402").children().remove();
+     $("#t150").children().remove();
+     $("#t1502").children().remove();
+     $("#tgioco1").children().remove();
+     $("#tgioco2").children().remove();
+     $("#tastocopertina").children().remove();
+     $("#tastocopertina2").children().remove();
+     $("#tastocopertinascene").children().remove();
+     $("#tastocopertina2scene").children().remove();
+     $("#titolomappa").children().remove();
+     $("#tastomappa").children().remove();
+     $("#tastomappa2").children().remove();
+     $("#tastocrediti").children().remove();
+     $("#tastocrediti2").children().remove();
+     $("#tastoautori").children().remove();
+     $("#tastoautori2").children().remove();
+     $("#coffer").children().remove();
+     $("#titolostart").children().remove();
+     $("#titolostart2").children().remove();
+     $("#tastomappacopertina").children().remove();
+     $("#tastomappa2copertina").children().remove();
+     $("#tastomappacrediti").children().remove();
+     $("#tastomappa2crediti").children().remove();
+     $("#tastocopertinacrediti").children().remove();
+     $("#tastocopertina2crediti").children().remove();
+     $("#tastomappagioco").children().remove();
+     $("#tastomappa2gioco").children().remove();
+     $("#tastocopertinagioco").children().remove();
+     $("#tastocopertina2gioco").children().remove();
+      $("#cornice").children().remove();
+
+
+  $("#immagine").append(paginaCorrente.render);
+  $("#center").append(paginaCorrente.center);
+  $("#center2").append(paginaCorrente.center2);
+  $("#left").append(paginaCorrente.left);
+  $("#left2").append(paginaCorrente.left2);
+  $("#right").append(paginaCorrente.right);
+  $("#right2").append(paginaCorrente.right2);
+  $("#testo").append(paginaCorrente.testo);
+  $("#t000").append(paginaCorrente.t000);
+  $("#t0002").append(paginaCorrente.t0002);
+  $("#t010").append(paginaCorrente.t010);
+  $("#t0102").append(paginaCorrente.t0102);
+  $("#t020").append(paginaCorrente.t020);
+  $("#t0202").append(paginaCorrente.t0202);
+  $("#t030").append(paginaCorrente.t030);
+  $("#t0302").append(paginaCorrente.t0302);
+  $("#t040").append(paginaCorrente.t040);
+  $("#t0402").append(paginaCorrente.t0402);
+  $("#t050").append(paginaCorrente.t050);
+  $("#t0502").append(paginaCorrente.t0502);
+  $("#t060").append(paginaCorrente.t060);
+  $("#t0602").append(paginaCorrente.t0602);
+  $("#t070").append(paginaCorrente.t070);
+  $("#t0702").append(paginaCorrente.t0702);
+  $("#t080").append(paginaCorrente.t080);
+  $("#t0802").append(paginaCorrente.t0802);
+  $("#t090").append(paginaCorrente.t090);
+  $("#t0902").append(paginaCorrente.t0902);
+  $("#t100").append(paginaCorrente.t100);
+  $("#t1002").append(paginaCorrente.t1002);
+  $("#t110").append(paginaCorrente.t110);
+  $("#t1102").append(paginaCorrente.t1102);
+  $("#t120").append(paginaCorrente.t120);
+  $("#t1202").append(paginaCorrente.t1202);
+  $("#t130").append(paginaCorrente.t130);
+  $("#t1302").append(paginaCorrente.t1302);
+  $("#t140").append(paginaCorrente.t140);
+  $("#t1402").append(paginaCorrente.t1402);
+  $("#t150").append(paginaCorrente.t150);
+  $("#t1502").append(paginaCorrente.t1502);
+  $("#tgioco1").append(paginaCorrente.tgioco1);
+  $("#tgioco2").append(paginaCorrente.tgioco2);
+  $("#titolomappa").append(paginaCorrente.titolomappa);
+  $("#tastocopertina").append(paginaCorrente.tastocopertina);
+  $("#tastocopertina2").append(paginaCorrente.tastocopertina2);
+  $("#tastocopertinascene").append(paginaCorrente.tastocopertinascene);
+  $("#tastocopertina2scene").append(paginaCorrente.tastocopertina2scene);
+  $("#tastomappa").append(paginaCorrente.tastomappa);
+  $("#tastomappa2").append(paginaCorrente.tastomappa2);
+  $("#tastocrediti").append(paginaCorrente.tastocrediti);
+  $("#tastocrediti2").append(paginaCorrente.tastocrediti2);
+  $("#tastoautori").append(paginaCorrente.tastoautori);
+  $("#tastoautori2").append(paginaCorrente.tastoautori2);
+  $("#coffer").append(paginaCorrente.coffer);
+  $("#titolostart").append(paginaCorrente.titolostart);
+  $("#titolostart2").append(paginaCorrente.titolostart2);
+  $("#tastomappacopertina").append(paginaCorrente.tastomappacopertina);
+  $("#tastomappa2copertina").append(paginaCorrente.tastomappa2copertina);
+  $("#tastomappacrediti").append(paginaCorrente.tastomappacrediti);
+  $("#tastomappa2crediti").append(paginaCorrente.tastomappa2crediti);
+  $("#tastocopertinacrediti").append(paginaCorrente.tastocopertinacrediti);
+  $("#tastocopertina2crediti").append(paginaCorrente.tastocopertina2crediti);
+  $("#tastomappagioco").append(paginaCorrente.tastomappagioco);
+  $("#tastomappa2gioco").append(paginaCorrente.tastomappa2gioco);
+  $("#tastocopertinagioco").append(paginaCorrente.tastocopertinagioco);
+  $("#tastocopertina2gioco").append(paginaCorrente.tastocopertina2gioco);
+  $("#cornice").append(paginaCorrente.cornice);
+
+  /* $("#center").css({
+    top: paginaCorrente.top,
+    left: paginaCorrente.left,
+  })*/
+
+}
+
+/*function verdeSinistra() {
+//  $("#left2").css("display", "block");
+$("#left2").fadeIn();
+
+
+}*/
+
+$("#left").hover(function() {$("#left2").css("display", "block");}).mouseout(function() {$("#left2").css("display", "none");});
+$("#center").hover(function() {$("#center2").css("display", "block");}).mouseout(function() {$("#center2").css("display", "none");});
+$("#right").hover(function() {$("#right2").css("display", "block");}).mouseout(function() {$("#right2").css("display", "none");});
+$("#t000").hover(function() {$("#t0002").css("display", "block");}).mouseout(function() {$("#t0002").css("display", "none");});
+$("#t010").hover(function() {$("#t0102").css("display", "block");}).mouseout(function() {$("#t0102").css("display", "none");});
+$("#t020").hover(function() {$("#t0202").css("display", "block");}).mouseout(function() {$("#t0202").css("display", "none");});
+$("#t030").hover(function() {$("#t0302").css("display", "block");}).mouseout(function() {$("#t0302").css("display", "none");});
+$("#t040").hover(function() {$("#t0402").css("display", "block");}).mouseout(function() {$("#t0402").css("display", "none");});
+$("#t050").hover(function() {$("#t0502").css("display", "block");}).mouseout(function() {$("#t0502").css("display", "none");});
+$("#t060").hover(function() {$("#t0602").css("display", "block");}).mouseout(function() {$("#t0602").css("display", "none");});
+$("#t070").hover(function() {$("#t0702").css("display", "block");}).mouseout(function() {$("#t0702").css("display", "none");});
+$("#t080").hover(function() {$("#t0802").css("display", "block");}).mouseout(function() {$("#t0802").css("display", "none");});
+$("#t090").hover(function() {$("#t0902").css("display", "block");}).mouseout(function() {$("#t0902").css("display", "none");});
+$("#t100").hover(function() {$("#t1002").css("display", "block");}).mouseout(function() {$("#t1002").css("display", "none");});
+$("#t110").hover(function() {$("#t1102").css("display", "block");}).mouseout(function() {$("#t1102").css("display", "none");});
+$("#t120").hover(function() {$("#t1202").css("display", "block");}).mouseout(function() {$("#t1202").css("display", "none");});
+$("#t130").hover(function() {$("#t1302").css("display", "block");}).mouseout(function() {$("#t1302").css("display", "none");});
+$("#t140").hover(function() {$("#t1402").css("display", "block");}).mouseout(function() {$("#t1402").css("display", "none");});
+$("#t150").hover(function() {$("#t1502").css("display", "block");}).mouseout(function() {$("#t1502").css("display", "none");});
+$("#tastocopertina").hover(function() {$("#tastocopertina2").css("display", "block");}).mouseout(function() {$("#tastocopertina2").css("display", "none");});
+$("#tastocopertinascene").hover(function() {$("#tastocopertina2scene").css("display", "block");}).mouseout(function() {$("#tastocopertina2scene").css("display", "none");});
+$("#tastomappa").hover(function() {$("#tastomappa2").css("display", "block");}).mouseout(function() {$("#tastomappa2").css("display", "none");});
+$("#tastocrediti").hover(function() {$("#tastocrediti2").css("display", "block");}).mouseout(function() {$("#tastocrediti2").css("display", "none");});
+$("#tastoautori").hover(function() {$("#tastoautori2").css("display", "block");}).mouseout(function() {$("#tastoautori2").css("display", "none");});
+$("#titolostart").hover(function() {$("#titolostart2").css("display", "block");}).mouseout(function() {$("#titolostart2").css("display", "none");});
+$("#tastomappacopertina").hover(function() {$("#tastomappa2copertina").css("display", "block");}).mouseout(function() {$("#tastomappa2copertina").css("display", "none");});
+$("#tastomappacrediti").hover(function() {$("#tastomappa2crediti").css("display", "block");}).mouseout(function() {$("#tastomappa2crediti").css("display", "none");});
+$("#tastocopertinacrediti").hover(function() {$("#tastocopertina2crediti").css("display", "block");}).mouseout(function() {$("#tastocopertina2crediti").css("display", "none");});
+$("#tastocopertinagioco").hover(function() {$("#tastocopertina2gioco").css("display", "block");}).mouseout(function() {$("#tastocopertina2gioco").css("display", "none");});
+$("#tastomappagioco").hover(function() {$("#tastomappa2gioco").css("display", "block");}).mouseout(function() {$("#tastomappa2gioco").css("display", "none");});
+
+
+$("#left2").hover(function() {$("#left2").css("display", "block");}).mouseout(function() {$("#left2").css("display", "none");});
+$("#center2").hover(function() {$("#center2").css("display", "block");}).mouseout(function() {$("#center2").css("display", "none");});
+$("#right2").hover(function() {$("#right2").css("display", "block");}).mouseout(function() {$("#right2").css("display", "none");});
+$("#t0002").hover(function() {$("#t0002").css("display", "block");}).mouseout(function() {$("#t0002").css("display", "none");});
+$("#t0102").hover(function() {$("#t0102").css("display", "block");}).mouseout(function() {$("#t0102").css("display", "none");});
+$("#t0202").hover(function() {$("#t0202").css("display", "block");}).mouseout(function() {$("#t0202").css("display", "none");});
+$("#t0302").hover(function() {$("#t0302").css("display", "block");}).mouseout(function() {$("#t0302").css("display", "none");});
+$("#t0402").hover(function() {$("#t0402").css("display", "block");}).mouseout(function() {$("#t0402").css("display", "none");});
+$("#t0502").hover(function() {$("#t0502").css("display", "block");}).mouseout(function() {$("#t0502").css("display", "none");});
+$("#t0602").hover(function() {$("#t0602").css("display", "block");}).mouseout(function() {$("#t0602").css("display", "none");});
+$("#t0702").hover(function() {$("#t0702").css("display", "block");}).mouseout(function() {$("#t0702").css("display", "none");});
+$("#t0802").hover(function() {$("#t0802").css("display", "block");}).mouseout(function() {$("#t0802").css("display", "none");});
+$("#t0902").hover(function() {$("#t0902").css("display", "block");}).mouseout(function() {$("#t0902").css("display", "none");});
+$("#t1002").hover(function() {$("#t1002").css("display", "block");}).mouseout(function() {$("#t1002").css("display", "none");});
+$("#t1102").hover(function() {$("#t1102").css("display", "block");}).mouseout(function() {$("#t1102").css("display", "none");});
+$("#t1202").hover(function() {$("#t1202").css("display", "block");}).mouseout(function() {$("#t1202").css("display", "none");});
+$("#t1302").hover(function() {$("#t1302").css("display", "block");}).mouseout(function() {$("#t1302").css("display", "none");});
+$("#t1402").hover(function() {$("#t1402").css("display", "block");}).mouseout(function() {$("#t1402").css("display", "none");});
+$("#t1502").hover(function() {$("#t1502").css("display", "block");}).mouseout(function() {$("#t1502").css("display", "none");});
+$("#tastocopertina2").hover(function() {$("#tastocopertina2").css("display", "block");}).mouseout(function() {$("#tastocopertina2").css("display", "none");});
+$("#tastocopertina2scene").hover(function() {$("#tastocopertina2scene").css("display", "block");}).mouseout(function() {$("#tastocopertina2scene").css("display", "none");});
+$("#tastomappa2").hover(function() {$("#tastomappa2").css("display", "block");}).mouseout(function() {$("#tastomappa2").css("display", "none");});
+$("#tastocrediti2").hover(function() {$("#tastocrediti2").css("display", "block");}).mouseout(function() {$("#tastocrediti2").css("display", "none");});
+$("#tastoautori2").hover(function() {$("#tastoautori2").css("display", "block");}).mouseout(function() {$("#tastoautori2").css("display", "none");});
+$("#titolostart2").hover(function() {$("#titolostart2").css("display", "block");}).mouseout(function() {$("#titolostart2").css("display", "none");});
+$("#tastomappa2copertina").hover(function() {$("#tastomappa2copertina").css("display", "block");}).mouseout(function() {$("#tastomappa2copertina").css("display", "none");});
+$("#tastomappa2crediti").hover(function() {$("#tastomappa2crediti").css("display", "block");}).mouseout(function() {$("#tastomappa2crediti").css("display", "none");});
+$("#tastocopertina2crediti").hover(function() {$("#tastocopertina2crediti").css("display", "block");}).mouseout(function() {$("#tastocopertina2crediti").css("display", "none");});
+$("#tastocopertina2gioco").hover(function() {$("#tastocopertina2gioco").css("display", "block");}).mouseout(function() {$("#tastocopertina2gioco").css("display", "none");});
+$("#tastomappa2gioco").hover(function() {$("#tastomappa2gioco").css("display", "block");}).mouseout(function() {$("#tastomappa2gioco").css("display", "none");});
+/*!$("#left2").hover(function() {$("#left2").hide();});
+!$("#center2").hover(function() {$("#center2").hide();});
+!$("#right2").hover(function() {$("#right2").hide();});*/
+
+
+function vaiSinistra () {
+  stato = pagine[stato].goLeft;
+  $("#left2").css("display", "none");
+  render()
+}
+
+$("#left2").click(vaiSinistra);
+
+
+function vaiCentro () {
+  stato = pagine[stato].goCenter;
+  $("#center2").css("display", "none");
+  render()
+}
+
+$("#center2").click(vaiCentro);
+
+
+function vaiDestra () {
+  stato = pagine[stato].goRight;
+  $("#right2").css("display", "none");
+  render()
+}
+
+function vaiMappa () {
+  stato = pagine[stato].goMap;
+  /*$(".button").hide();
+  $(".buttoncentro").hide();*/
+  $("#note1").hide();
+  $("#note2").hide();
+  $("#note3").hide();
+  $("#t000").show();
+  $("#t010").show();
+  $("#t020").show();
+  $("#t030").show();
+  $("#t040").show();
+  $("#t050").show();
+  $("#t060").show();
+  $("#t070").show();
+  $("#t080").show();
+  $("#t090").show();
+  $("#t100").show();
+  $("#t110").show();
+  $("#t120").show();
+  $("#t130").show();
+  $("#t140").show();
+  $("#t150").show();
+  $("#tastocopertina").show();
+  $("#tastocopertinascene").show();
+  $("#tastomappa2").css("display", "none");
+  $("#tastomappa2copertina").css("display", "none");
+  $("#tastomappa2crediti").css("display", "none");
+  $("#tastomappa2gioco").css("display", "none");
+  render()
+}
+
+
+function vaiScena () {
+  stato = pagine[stato].goScene000;
+  $("#t0002").css("display", "none");
+  $("#titolostart2").css("display", "none");
+  render()
+}
+
+function vaiScena010 () {
+  stato = pagine[stato].goScene010;
+  $("#t0102").css("display", "none");
+  //("#titolostart2").css("display", "none");
+  render()
+}
+
+function vaiScena020 () {
+  stato = pagine[stato].goScene020;
+  $("#t0202").css("display", "none");
+  render()
+}
+
+function vaiScena030 () {
+  stato = pagine[stato].goScene030;
+  $("#t0302").css("display", "none");
+  render()
+}
+
+function vaiScena040 () {
+  stato = pagine[stato].goScene040;
+  $("#t0402").css("display", "none");
+  render()
+}
+
+function vaiScena050 () {
+  stato = pagine[stato].goScene050;
+  $("#t0502").css("display", "none");
+  render()
+}
+
+function vaiScena060 () {
+  stato = pagine[stato].goScene060;
+  $("#t0602").css("display", "none");
+  render()
+}
+
+function vaiScena070 () {
+  stato = pagine[stato].goScene070;
+  $("#t0702").css("display", "none");
+  render()
+}
+
+function vaiScena080 () {
+  stato = pagine[stato].goScene080;
+  $("#t0802").css("display", "none");
+  render()
+}
+
+function vaiScena090 () {
+  stato = pagine[stato].goScene090;
+  $("#t0902").css("display", "none");
+  render()
+}
+
+function vaiScena100 () {
+  stato = pagine[stato].goScene100;
+  $("#t1002").css("display", "none");
+  render()
+}
+
+function vaiScena110 () {
+  stato = pagine[stato].goScene110;
+  $("#t1102").css("display", "none");
+  render()
+}
+
+function vaiScena120 () {
+  stato = pagine[stato].goScene120;
+  $("#t1202").css("display", "none");
+  render()
+}
+
+function vaiScena130 () {
+  stato = pagine[stato].goScene130;
+  $("#t1302").css("display", "none");
+  render()
+}
+
+
+function vaiScena140 () {
+  stato = pagine[stato].goScene140;
+  $("#t1402").css("display", "none");
+  render()
+}
+
+function vaiScena150 () {
+  stato = pagine[stato].goScene150;
+  $("#t1502").css("display", "none");
+  render()
+}
+
+function vaiCopertina () {
+  stato = pagine[stato].goCopertina;
+  $("#tastocopertina2scene").css("display", "none");
+  $("#tastocopertina2").css("display", "none");
+  $("#tastocopertina2crediti").css("display", "none");
+  $("#tastocopertina2gioco").css("display", "none");
+  render()
+}
+
+function vaiCrediti () {
+  stato = pagine[stato].goCrediti;
+  $("#tastocrediti2").css("display", "none");
+  render()
+}
+
+function vaiAutori () {
+  stato = pagine[stato].goAutori;
+  $("#tastoautori2").css("display", "none");
+  render()
+}
+
+function vaiGiocoUno () {
+  stato = pagine[stato].goScene015;
+  /*$("#centerF").show();
+  $(".scenette").hide();*/
+  render()
+}
+
+function vaiGiocoDue () {
+  stato = pagine[stato].goScene135;
+  /*$("#centerF").show();
+  $(".scenette").hide();*/
+  render()
+}
+
+
+$("#tgioco1").click(vaiGiocoUno);
+$("#tgioco2").click(vaiGiocoDue);
+
+
+$("#right2").click(vaiDestra);
+
+$("#tastomappa2").click(vaiMappa);
+$("#tastocrediti2").click(vaiCrediti);
+$("#tastoautori2").click(vaiAutori);
+$("#titolostart2").click(vaiScena);
+$("#tastomappa2copertina").click(vaiMappa);
+$("#tastomappa2crediti").click(vaiMappa);
+$("#tastomappa2gioco").click(vaiMappa);
+$("#tastocopertina2crediti").click(vaiCopertina);
+$("#tastocopertina2gioco").click(vaiCopertina);
+
+$("#t0002").click(vaiScena);
+$("#t0102").click(vaiScena010);
+$("#t0202").click(vaiScena020);
+$("#t0302").click(vaiScena030);
+$("#t0402").click(vaiScena040);
+$("#t0502").click(vaiScena050);
+$("#t0602").click(vaiScena060);
+$("#t0702").click(vaiScena070);
+$("#t0802").click(vaiScena080);
+$("#t0902").click(vaiScena090);
+$("#t1002").click(vaiScena100);
+$("#t1102").click(vaiScena110);
+$("#t1202").click(vaiScena120);
+$("#t1302").click(vaiScena130);
+$("#t1402").click(vaiScena140);
+$("#t1502").click(vaiScena150);
+$("#tastocopertina2").click(vaiCopertina);
+$("#tastocopertina2scene").click(vaiCopertina);
+
+
+</script>
+
+</body>
+</html>
